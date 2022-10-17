@@ -1,8 +1,9 @@
-import express, { Application, Request, Response, NextFunction } from 'express';
+import express, { Application, Request, Response, NextFunction, Router } from 'express';
 import { config } from 'dotenv';
 import * as bodyParser from 'body-parser';
 import cors from 'cors';
 import { connect, connection } from 'mongoose';
+import { cityRouter } from './routes/city.route';
 
 config();
 
@@ -38,6 +39,9 @@ app.get('/', (req: Request, res: Response, next: NextFunction) => {
 });
 
 /* Routes */
+export const router = Router();
+router.use('/api/v1/cities', cityRouter);
+app.use(router);
 /** */
 
 const port = parseInt(process.env.PORT || '3000');

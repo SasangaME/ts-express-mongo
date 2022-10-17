@@ -1,0 +1,27 @@
+GET http://localhost:8080/api/v1/cities
+
+###
+
+GET http://localhost:8080/api/v1/cities/634d60488bd0f9a26125ada5
+
+###
+
+POST http://localhost:8080/api/v1/cities
+Content-Type: application/json
+
+{
+    "name": "Elpitiya",
+    "province": "Southern",
+    "description": "stupidest city ever"
+}
+
+###
+PUT http://localhost:8080/api/v1/cities/634d60488bd0f9a26125ada5
+Content-Type: application/json
+
+{
+    "name": "Kotte",
+    "province": "Western",
+    "description": "the best city ever"
+}
+
