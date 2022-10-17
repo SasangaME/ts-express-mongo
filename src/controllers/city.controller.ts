@@ -34,7 +34,6 @@ export async function insert(req: Request, res: Response, next: NextFunction) {
 
 export async function update(req: Request, res: Response, next: NextFunction) {
     try {
-        console.log("cities udpate called");
         const id = req.params.id;
         const data = await cityService.update(id, req.body);
         res.json(data);
